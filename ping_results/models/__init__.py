@@ -19,3 +19,4 @@
 ##
 
 from .host import Host, HostAdmin                                 # noqa: F401
+from .result import Result, ResultAdmin                           # noqa: F401

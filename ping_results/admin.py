@@ -21,6 +21,8 @@
 from django.contrib import admin
 
 from .models.host import Host, HostAdmin
+from .models.result import Result, ResultAdmin
 
 
 admin.site.register(Host, HostAdmin)
+admin.site.register(Result, ResultAdmin)
