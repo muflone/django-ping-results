@@ -18,10 +18,10 @@
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ##
 
-from .base_model import BaseModel, BaseModelAdmin                 # noqa: F401
-from .admin_list_display import (AdminListDisplay,                # noqa: F401
-                                 AdminListDisplayAdmin)           # noqa: F401
-from .admin_list_display_link import (AdminListDisplayLink,       # noqa: F401
-                                      AdminListDisplayLinkAdmin)  # noqa: F401
-from .admin_list_filter import (AdminListFilter,                  # noqa: F401
-                                AdminListFilterAdmin)             # noqa: F401
+from django.apps import AppConfig
+from django.utils.translation import pgettext_lazy
+
+
+class UtilityConfig(AppConfig):
+    name = 'utility'
+    verbose_name = pgettext_lazy('UtilityConfig', 'Utility')

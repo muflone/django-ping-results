@@ -18,10 +18,10 @@
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ##
 
-from .base_model import BaseModel, BaseModelAdmin                 # noqa: F401
-from .admin_list_display import (AdminListDisplay,                # noqa: F401
-                                 AdminListDisplayAdmin)           # noqa: F401
-from .admin_list_display_link import (AdminListDisplayLink,       # noqa: F401
-                                      AdminListDisplayLinkAdmin)  # noqa: F401
-from .admin_list_filter import (AdminListFilter,                  # noqa: F401
-                                AdminListFilterAdmin)             # noqa: F401
+import importlib
+
+
+def get_class_from_module(module_class):
+    """Get Class from a module"""
+    module_name, class_name = module_class.rsplit('.', 1)
+    return getattr(importlib.import_module(module_name), class_name)

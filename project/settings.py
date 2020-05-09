@@ -39,8 +39,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'ping_results',
     'utility',
+    'ping_results',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -130,3 +130,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 ADMIN_URL = 'admin/'
+
+# Admin Models list with a field referencing other models in its choices
+ADMIN_MODELS_REFERENCING_MODELS_WITH_CHOICES = ('AdminListDisplayAdmin',
+                                                'AdminListDisplayLinkAdmin',
+                                                'AdminListFilterAdmin')
