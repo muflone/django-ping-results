@@ -3,3 +3,5 @@ django==3.0.6
 asgiref==3.2.7
 pytz==2020.1
 sqlparse==0.3.1
+# Django Admin List Filter
+django-admin-list-filter-dropdown==1.0.3
