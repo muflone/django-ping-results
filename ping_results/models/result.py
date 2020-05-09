@@ -18,6 +18,7 @@
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ##
 
+from django.conf import settings
 from django.db import models
 from django.utils.translation import pgettext_lazy
 
@@ -49,7 +50,10 @@ class Result(BaseModel):
     def __str__(self):
         return '{HOST} {DATETIME}'.format(HOST=self.host,
                                           DATETIME=self.timestamp.strftime(
-                                              '%Y-%m-%d %H:%M.%S.%f'))
+                                              settings.RESULT_DATETIME_FORMAT))
+
+    def timestamp_value(self):
+        return self.timestamp.strftime(settings.RESULT_DATETIME_FORMAT)
 
 
 class ResultAdmin(BaseModelAdmin):

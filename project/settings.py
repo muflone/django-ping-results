@@ -137,3 +137,5 @@ ADMIN_URL = 'admin/'
 ADMIN_MODELS_REFERENCING_MODELS_WITH_CHOICES = ('AdminListDisplayAdmin',
                                                 'AdminListDisplayLinkAdmin',
                                                 'AdminListFilterAdmin')
+# Timestamp field format for Result model
+RESULT_DATETIME_FORMAT = '%Y-%m-%d %H:%M.%S.%f'
