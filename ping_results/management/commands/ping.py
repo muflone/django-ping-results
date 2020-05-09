@@ -79,10 +79,10 @@ class Command(BaseCommand):
                     match = regex_time.search(line)
                     duration = (float(match.group().replace('time=', ''))
                                 if match
-                                else 0.00)
+                                else None)
                     Result.objects.create(host=host,
                                           timestamp=timezone.now(),
-                                          status=duration > 0.01,
+                                          status=duration is not None,
                                           elapsed=duration)
                     print(line)
                     count += 1

@@ -33,7 +33,9 @@ class Result(BaseModel):
                                                                 'timestamp'))
     status = models.BooleanField(verbose_name=pgettext_lazy('Result',
                                                             'status'))
-    elapsed = models.FloatField(verbose_name=pgettext_lazy('Result',
+    elapsed = models.FloatField(blank=True,
+                                null=True,
+                                verbose_name=pgettext_lazy('Result',
                                                            'elapsed time'))
 
     class Meta:
