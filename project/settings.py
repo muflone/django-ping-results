@@ -40,6 +40,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django_admin_listfilter_dropdown',
+    'rangefilter',
     'utility',
     'ping_results',
     'django.contrib.admin',
