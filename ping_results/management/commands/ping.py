@@ -60,15 +60,19 @@ class Command(BaseCommand):
                 NAME=options['host']))
         # Check Host
         if host:
+            # Standard options
             arguments = ['ping',
                          '-D',
                          '-O',
-                         '-i',
-                         str(host.delay) if host.delay > 1 else '1',
-                         '-s',
-                         str(host.packet_size - 8)
-                         if host.packet_size >= 8 else '0',
                          host.hostname]
+            # Add delay between requests
+            arguments.append('-i')
+            arguments.append(str(host.delay) if host.delay > 1 else '1')
+            # Add packet size for each request
+            arguments.append('-s')
+            arguments.append(str(host.packet_size - 8)
+                             if host.packet_size >= 8 else '0')
+            # Execute the ping request
             process = subprocess.Popen(args=arguments,
                                        stdout=subprocess.PIPE,
                                        stderr=subprocess.PIPE,
