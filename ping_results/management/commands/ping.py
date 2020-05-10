@@ -72,6 +72,10 @@ class Command(BaseCommand):
             arguments.append('-s')
             arguments.append(str(host.packet_size - 8)
                              if host.packet_size >= 8 else '0')
+            # Set the interface if set
+            if host.interface:
+                arguments.append('-I')
+                arguments.append(host.interface)
             # Execute the ping request
             process = subprocess.Popen(args=arguments,
                                        stdout=subprocess.PIPE,

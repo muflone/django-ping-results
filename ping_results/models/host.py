@@ -43,6 +43,10 @@ class Host(BaseModel):
                                                    verbose_name=pgettext_lazy(
                                                        'Host',
                                                        'packet size'))
+    interface = models.CharField(max_length=255,
+                                 blank=True,
+                                 verbose_name=pgettext_lazy('Host',
+                                                            'interface'))
 
     class Meta:
         # Define the database table
