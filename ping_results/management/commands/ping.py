@@ -65,6 +65,9 @@ class Command(BaseCommand):
                          '-O',
                          '-i',
                          str(host.delay) if host.delay > 1 else '1',
+                         '-s',
+                         str(host.packet_size - 8)
+                         if host.packet_size >= 8 else '0',
                          host.hostname]
             process = subprocess.Popen(args=arguments,
                                        stdout=subprocess.PIPE,

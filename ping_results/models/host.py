@@ -39,6 +39,10 @@ class Host(BaseModel):
                                              verbose_name=pgettext_lazy(
                                                  'Host',
                                                  'delay'))
+    packet_size = models.PositiveSmallIntegerField(default=64,
+                                                   verbose_name=pgettext_lazy(
+                                                       'Host',
+                                                       'packet size'))
 
     class Meta:
         # Define the database table
