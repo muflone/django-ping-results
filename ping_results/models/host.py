@@ -35,6 +35,10 @@ class Host(BaseModel):
     hostname = models.CharField(max_length=255,
                                 verbose_name=pgettext_lazy('Host',
                                                            'hostname'))
+    delay = models.PositiveSmallIntegerField(default=1,
+                                             verbose_name=pgettext_lazy(
+                                                 'Host',
+                                                 'delay'))
 
     class Meta:
         # Define the database table

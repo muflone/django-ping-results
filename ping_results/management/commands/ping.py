@@ -63,6 +63,8 @@ class Command(BaseCommand):
             arguments = ['ping',
                          '-D',
                          '-O',
+                         '-i',
+                         str(host.delay) if host.delay > 1 else '1',
                          host.hostname]
             process = subprocess.Popen(args=arguments,
                                        stdout=subprocess.PIPE,
